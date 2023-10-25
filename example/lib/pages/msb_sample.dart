@@ -40,7 +40,7 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
       appBar: MaterialSearchBar(
         controller: _controller,
         appBar: AppBar(
-          title: const Text('Material SearchBar Sample'),
+          title: const Text('MSB with AppBar'),
           actions: [
             IconButton(
               icon: const Icon(Icons.search),
@@ -51,7 +51,7 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
           ],
         ),
         color: Colors.white,
-        alignment: Alignment.center,
+        alignment: Alignment.bottomRight,
         textField: TextField(
           onChanged: (text) {},
           controller: _searchQuery,

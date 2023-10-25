@@ -28,7 +28,7 @@ class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
   /// [int] provide animationDuration value default value it is 300
   /// [Color] color for the search bar color, default value is [colorScheme.primary]
   /// [double] toolbarHeight for the search bar height, default value is [kToolbarHeight]
-  /// [EdgeInsetsGeometry] contentPadding default value is 8.0
+  /// [EdgeInsetsGeometry] contentPadding default value is 0.0
   const MaterialSearchBar({
     required this.controller,
     required this.appBar,
@@ -39,7 +39,7 @@ class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
     this.toolbarHeight,
     this.animationDuration,
     this.color,
-    this.contentPadding = const EdgeInsets.all(8.0),
+    this.contentPadding = EdgeInsets.zero,
     super.key,
   });
 

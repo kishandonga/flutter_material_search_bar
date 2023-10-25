@@ -1,20 +1,15 @@
-import 'package:example/msb_dialog_sample.dart';
-import 'package:example/msb_sample.dart';
+import 'package:example/pages/msb_dialog_sample.dart';
+import 'package:example/pages/msb_sample.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Material Search AppBar'),
+        title: const Text('Material Search Bar'),
       ),
       body: Center(
         child: Column(

@@ -37,13 +37,14 @@ class _MaterialSearchBarDialogSampleState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Material SearchBar Dialog Sample'),
+        title: const Text('MSB With Dialog'),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
               showMaterialSearchBarDialog(
                 context,
+                alignment: Alignment.bottomRight,
                 color: Colors.white,
                 textField: TextField(
                   controller: _searchQuery,

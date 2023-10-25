@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 /// [Alignment] provider animation starting alignment default it is [Alignment.center]
 /// [int] provide animationDuration value default value it is 300
 /// [Color] color for the search bar color, default value is [colorScheme.primary]
-/// [EdgeInsetsGeometry] contentPadding default value is 8.0
+/// [EdgeInsetsGeometry] contentPadding default value is 0.0
 /// [double] toolbarHeight for the search bar height, default value is [kToolbarHeight]
 /// [double] statusBarHeight for the search bar height, default value is [padding.top]
 Future<void> showMaterialSearchBarDialog(
@@ -24,11 +24,10 @@ Future<void> showMaterialSearchBarDialog(
   double? toolbarHeight,
   int? animationDuration,
   Color? color,
-  EdgeInsetsGeometry contentPadding = const EdgeInsets.all(8.0),
+  EdgeInsetsGeometry contentPadding = EdgeInsets.zero,
 }) async {
   final sbHeight = statusBarHeight ?? MediaQuery.of(context).padding.top;
   final abHeight = toolbarHeight ?? kToolbarHeight;
-  final totalHeight = sbHeight + abHeight;
   final animDuration = animationDuration ?? 300;
   final align = alignment ?? Alignment.center;
 
@@ -41,23 +40,31 @@ Future<void> showMaterialSearchBarDialog(
       return Material(
         clipBehavior: Clip.antiAlias,
         color: color ?? Theme.of(context).colorScheme.primary,
-        child: SizedBox(
-          height: totalHeight,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: contentPadding,
-              child: Row(
-                children: [
-                  backButton ?? const SizedBox.shrink(),
-                  Expanded(
-                    child: textField,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              height: sbHeight,
+            ),
+            SizedBox(
+              height: abHeight,
+              child: Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: contentPadding,
+                  child: Row(
+                    children: [
+                      backButton ?? const SizedBox.shrink(),
+                      Expanded(
+                        child: textField,
+                      ),
+                      clearButton ?? const SizedBox.shrink(),
+                    ],
                   ),
-                  clearButton ?? const SizedBox.shrink(),
-                ],
+                ),
               ),
             ),
-          ),
+          ],
         ),
       );
     },

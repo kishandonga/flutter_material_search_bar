@@ -5,7 +5,6 @@ import 'material_search_bar_controller.dart';
 
 //TODO: offset impl
 //TODO: animation curve impl
-//TODO: is search bar visible method impl
 class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
   final MaterialSearchBarController controller;
   final AppBar appBar;
@@ -52,31 +51,33 @@ class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
 
 class _MaterialSearchAppBar extends State<MaterialSearchBar>
     with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
+  late AnimationController animController;
   late Animation<double> animation;
 
   @override
   void initState() {
-    animationController = AnimationController(
+    animController = AnimationController(
       vsync: this,
       duration: Duration(milliseconds: widget.animationDuration ?? 300),
     );
     animation = CurvedAnimation(
-      parent: animationController,
+      parent: animController,
       curve: Curves.easeIn,
     );
-    widget.controller.register(() async {
+    widget.controller.addListener(() async {
       await _toggleAnimation();
     });
     super.initState();
   }
 
   _toggleAnimation() async {
-    if (animationController.status == AnimationStatus.forward ||
-        animationController.status == AnimationStatus.completed) {
-      await animationController.reverse();
+    if (animController.status == AnimationStatus.forward ||
+        animController.status == AnimationStatus.completed) {
+      await animController.reverse();
+      widget.controller.isSearchBarVisible = false;
     } else {
-      await animationController.forward();
+      await animController.forward();
+      widget.controller.isSearchBarVisible = true;
     }
   }
 

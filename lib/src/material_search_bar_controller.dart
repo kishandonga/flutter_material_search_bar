@@ -1,11 +1,9 @@
-class MaterialSearchBarController {
-  late Function _callback;
+import 'package:flutter/material.dart';
 
-  register(Function callback) {
-    _callback = callback;
-  }
+class MaterialSearchBarController extends ChangeNotifier {
+  bool isSearchBarVisible = false;
 
   void toggleSearchBar() {
-    _callback.call();
+    notifyListeners();
   }
 }

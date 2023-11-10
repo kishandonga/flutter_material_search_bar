@@ -1,6 +1,6 @@
 name: material_search_bar
 description: 
-  Circular Reveal Animation using material search bar as flutter widget and dialog
+  Circular Reveal Animation using material search bar as flutter widget
 version: 0.0.1
 homepage: 'none'
 
@@ -16,6 +16,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 flutter:

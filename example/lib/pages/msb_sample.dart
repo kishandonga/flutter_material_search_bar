@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:example/model/city.dart';
 import 'package:example/utils/debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_material_color_picker/flutter_material_color_picker.dart';
 import 'package:material_search_bar/material_search_bar.dart';
 
 class MaterialSearchBarSample extends StatefulWidget {
@@ -19,6 +20,7 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
   final debounce = Debounce(milliseconds: 800);
   final MaterialSearchBarController _controller = MaterialSearchBarController();
   final TextEditingController _searchQuery = TextEditingController();
+  Color color = Colors.white;
 
   @override
   void initState() {
@@ -35,6 +37,41 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
     }
     _searchList.addAll(_list);
     setState(() {});
+  }
+
+  Color getHintColor() {
+    if (color != Colors.white) {
+      return Colors.white;
+    } else {
+      return Colors.grey;
+    }
+  }
+
+  Color getIconColor() {
+    if (color != Colors.white) {
+      return Colors.white;
+    } else {
+      return Colors.black;
+    }
+  }
+
+  void _openDialog(String title, Widget content) {
+    showDialog(
+      context: context,
+      builder: (_) {
+        return AlertDialog(
+          contentPadding: const EdgeInsets.all(18.0),
+          title: Text(title),
+          content: content,
+          actions: [
+            TextButton(
+              onPressed: Navigator.of(context).pop,
+              child: const Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -55,6 +92,22 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
             title: const Text('MSB with AppBar'),
             actions: [
               IconButton(
+                icon: const Icon(Icons.colorize),
+                onPressed: () {
+                  _openDialog(
+                    'Color Picker',
+                    MaterialColorPicker(
+                      onColorChange: (Color color) {
+                        setState(() {
+                          this.color = color;
+                        });
+                      },
+                      selectedColor: Colors.white,
+                    ),
+                  );
+                },
+              ),
+              IconButton(
                 icon: const Icon(Icons.search),
                 onPressed: () {
                   _controller.toggleSearchBar();
@@ -62,7 +115,7 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
               ),
             ],
           ),
-          color: Colors.white,
+          color: color,
           alignment: Alignment.bottomRight,
           textField: TextField(
             onChanged: (text) {
@@ -91,25 +144,31 @@ class _MaterialSearchBarSampleState extends State<MaterialSearchBarSample> {
               fontSize: 18.0,
               color: Colors.black,
             ),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               border: InputBorder.none,
               focusedBorder: InputBorder.none,
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
               hintText: 'Search...',
-              hintStyle: TextStyle(color: Colors.grey),
+              hintStyle: TextStyle(color: getHintColor()),
             ),
           ),
           backButton: IconButton(
-            icon: const Icon(Icons.arrow_back),
+            icon: Icon(
+              Icons.arrow_back,
+              color: getIconColor(),
+            ),
             onPressed: () async {
               _searchQuery.text = '';
               _controller.toggleSearchBar();
             },
           ),
           clearButton: IconButton(
-            icon: const Icon(Icons.close),
+            icon: Icon(
+              Icons.close,
+              color: getIconColor(),
+            ),
             onPressed: () {
               _searchQuery.text = '';
               _searchList.clear();

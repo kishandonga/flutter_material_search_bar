@@ -1,6 +1,6 @@
 name: material_search_bar
 description: Material search bar with circular reveal animation like whatsapp as flutter widget
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/kishandonga/material_search_bar
 
 environment:

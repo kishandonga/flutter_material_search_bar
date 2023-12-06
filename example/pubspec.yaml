@@ -1,5 +1,5 @@
 name: example
-description: A new Flutter project as example of the material_search_bar.
+description: A new Flutter project as example of the flutter_material_search_bar
 publish_to: 'none' 
 version: 1.0.0+1
 
@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   device_preview: ^1.1.0
   flutter_material_color_picker: ^1.2.0
-  material_search_bar:
+  flutter_material_search_bar:
     path: ../
 
 dev_dependencies:

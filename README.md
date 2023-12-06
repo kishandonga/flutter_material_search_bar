@@ -12,7 +12,7 @@ Inspired by WhatsApp SearchView and Android [MaterialSearchView](https://github.
 ## Usage
 
 ```dart
-import 'package:material_search_bar/material_search_bar.dart';
+import 'package:flutter_material_search_bar/flutter_material_search_bar.dart';
 
 MaterialSearchBar(
   // @required
@@ -34,8 +34,9 @@ MaterialSearchBar(
 ),
 ```
 
-## TODO
+## Pending Task
 1. To provide Offset support
+2. Animation curve support
 
 ## Contribution
 1. Fork it

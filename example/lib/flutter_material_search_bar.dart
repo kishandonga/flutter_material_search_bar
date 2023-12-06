@@ -4,7 +4,7 @@ import 'package:example/model/city.dart';
 import 'package:example/utils/debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_material_color_picker/flutter_material_color_picker.dart';
-import 'package:material_search_bar/material_search_bar.dart';
+import 'package:flutter_material_search_bar/flutter_material_search_bar.dart';
 
 class MaterialSearchBarSample extends StatefulWidget {
   const MaterialSearchBarSample({super.key});

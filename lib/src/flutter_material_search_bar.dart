@@ -1,7 +1,7 @@
 import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
 
-import 'material_search_bar_controller.dart';
+import 'flutter_material_search_bar_controller.dart';
 
 //TODO: offset impl
 //TODO: animation curve impl

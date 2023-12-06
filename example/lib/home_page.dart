@@ -1,4 +1,4 @@
-import 'package:example/material_search_bar.dart';
+import 'package:example/flutter_material_search_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

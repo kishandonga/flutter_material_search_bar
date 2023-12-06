@@ -1,39 +1,50 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Material Search Bar
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Material search bar with circular reveal animation like whatsapp as flutter widget.
+Inspired by WhatsApp SearchView and Android [MaterialSearchView](https://github.com/leoncydsilva/MaterialSearchView)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+<div align:left;display:inline;>
+<img width="360" height="800" src="images/demo.gif"/>
+</div>
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:material_search_bar/material_search_bar.dart';
+
+MaterialSearchBar(
+  // @required
+  controller: MaterialSearchBarController(),
+  // @required
+  appBar: AppBar(
+    title: const Text('AppBar'),
+  ),
+  // @required
+  textField: TextField(),
+  //to show the back button and customized as per need
+  backButton: IconButton(
+    icon: Icon(Icons.arrow_back),
+  ),
+  //to show the clear button and customized as per need
+  clearButton: IconButton(
+    icon: Icon(Icons.close),
+  ),
+),
 ```
 
-## Additional information
+## TODO
+1. To provide Offset support
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Contribution
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -m 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
+
+## Support the Library
+
+- You can support the library by staring it on Github && liking it on pub or report any bugs you encounter.
+- also, if you have a suggestion or think something can be implemented in a better way, open an issue and let's talk about it.

@@ -23,6 +23,8 @@ MaterialSearchBar(
   ),
   // @required
   textField: TextField(),
+  // animation starting alignment
+  alignment: Alignment.bottomRight,
   //to show the back button and customized as per need
   backButton: IconButton(
     icon: Icon(Icons.arrow_back),

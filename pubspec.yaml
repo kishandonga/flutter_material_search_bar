@@ -1,9 +1,9 @@
 name: flutter_material_search_bar
-description: Material search bar with circular reveal animation like whatsapp as flutter widget
+description: Material search bar with circular reveal animation as flutter widget like whatsapp search bar
 issue_tracker: https://github.com/kishandonga/flutter_material_search_bar/issues
 repository: https://github.com/kishandonga/flutter_material_search_bar
 homepage: https://github.com/kishandonga/flutter_material_search_bar
-version: 1.0.0
+version: 1.0.1
 
 topics:
   - ui

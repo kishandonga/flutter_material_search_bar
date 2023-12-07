@@ -1,12 +1,13 @@
 ## Material Search Bar
 
-Material search bar with circular reveal animation like whatsapp as flutter widget.
+Material search bar with circular reveal animation as flutter widget like whatsapp search bar.
+
 Inspired by WhatsApp SearchView and Android [MaterialSearchView](https://github.com/leoncydsilva/MaterialSearchView)
 
 ## Features
 
 <div align:left;display:inline;>
-<img width="360" height="800" src="images/demo.gif"/>
+<img width="360" height="800" src="https://github.com/kishandonga/flutter_material_search_bar/raw/main/images/demo.gif"/>
 </div>
 
 ## Usage
@@ -35,6 +36,30 @@ MaterialSearchBar(
   ),
 ),
 ```
+
+## Parameter Details
+
+### MaterialSearchBar(...)
+
+| Parameter | Type | Required | Default Value | Details |
+| :--- | :--- | :--- | :--- | :--- |
+| controller | MaterialSearchBarController | Yes | | Required to use utility methods
+| appBar | AppBar | Yes | | setup app bar inside the MaterialSearchBar same as used in the Scaffold
+| textField | TextField | Yes | | Use as a text input for the MaterialSearchBar
+| toolbarHeight | double | No | kToolbarHeight | AppBar customized then pass updated toolbar height
+| color | Color | No | Theme.of(context).colorScheme.primary | color of the search bar
+| backButton | Widget | No | SizedBox.shrink() | provide back button widget at left side
+| clearButton | Widget | No | SizedBox.shrink() | provide clear button widget at right side
+| alignment | Alignment | No | Alignment.center | provider animation starting alignment
+| animationDuration | int | No | 300 milliseconds | provider animation duration value
+| contentPadding | EdgeInsetsGeometry | No | EdgeInsets.zero | provider padding around search bar
+
+### MaterialSearchBarController(...)
+
+| Parameter | Type | Default Value | Details |
+| :--- | :--- | :--- | :--- |
+| isSearchBarVisible | bool | false | To check material search bar is visible or not
+| toggleSearchBar() |  |  | Toggle search bar visibility
 
 ## Pending Task
 1. To provide Offset support

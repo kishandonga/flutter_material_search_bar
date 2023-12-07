@@ -5,16 +5,38 @@ import 'flutter_material_search_bar_controller.dart';
 
 //TODO: offset impl
 //TODO: animation curve impl
+
+///A widget to show [MaterialSearchBar], it is [StatefulWidget] widget and implements [PreferredSizeWidget] for the size estimation
+///based on the circular revel animation here used stack overlay for the [MaterialSearchBar]
 class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
+  /// controller [MaterialSearchBarController] required to use utility methods, this is required param
   final MaterialSearchBarController controller;
+
+  /// use appBar [AppBar] same as used in the [Scaffold], this is required param
   final AppBar appBar;
+
+  /// pass textField [TextField] for the search view and this is required param
   final TextField textField;
+
+  ///if your [AppBar] customized then pass updated toolbar height
   final double? toolbarHeight;
+
+  /// use color [Color] param for the color of the search bar view
   final Color? color;
+
+  /// to show back button [backButton] use back button widget [Widget]
   final Widget? backButton;
+
+  /// to show clear button [clearButton] use clear button widget [Widget]
   final Widget? clearButton;
+
+  /// starting alignment [Alignment] of the animation, for the possible values refer [Alignment], default it is [Alignment.center]
   final Alignment? alignment;
+
+  ///[int] provide animationDuration value default value it is 300
   final int? animationDuration;
+
+  /// [EdgeInsetsGeometry] contentPadding default value is [EdgeInsets.zero]
   final EdgeInsetsGeometry contentPadding;
 
   /// create [MaterialSearchBar] using given parameters
@@ -27,7 +49,7 @@ class MaterialSearchBar extends StatefulWidget implements PreferredSizeWidget {
   /// [int] provide animationDuration value default value it is 300
   /// [Color] color for the search bar color, default value is [colorScheme.primary]
   /// [double] toolbarHeight for the search bar height, default value is [kToolbarHeight]
-  /// [EdgeInsetsGeometry] contentPadding default value is 0.0
+  /// [EdgeInsetsGeometry] contentPadding default value is [EdgeInsets.zero]
   const MaterialSearchBar({
     required this.controller,
     required this.appBar,
